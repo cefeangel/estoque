@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace estoque2\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use estoque2\User;
+use estoque2\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
