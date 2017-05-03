@@ -3,12 +3,16 @@
 namespace estoque2\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
 {
     
     public function lista(){
-        return '<h1>Listagem de produtos com Laravel</h1>';
+                    //guery builder
+        $produtos = DB::table('produtos')->get();
+        
+        return view('listagem')->with('produtos', $produtos);
     }
     
 }
