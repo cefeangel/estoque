@@ -2,7 +2,7 @@
 
 namespace estoque2\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
@@ -16,11 +16,22 @@ class ProdutoController extends Controller
     }
     
     public function mostra(){
+       
+        
+//        $id = Request::input('id');
+        $id = Request::route('id');
+        
         //query builder
         $produto = DB::table('produtos')
-                ->where('id','=','3')
+                ->where('id','=',$id)
                 ->get();
-        return view('detalhe')->with('p', $produto[0]);
+          
+        if(empty($produto[0])){
+            return 'Esse produto não existe';
+        }else{
+            return view('detalhe')->with('p', $produto[0]);
+        }
+       
     }
     
 }

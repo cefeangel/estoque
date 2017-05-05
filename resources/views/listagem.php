@@ -15,7 +15,7 @@
                         <td><?php echo $p->descricao; ?></td>
                         <td><?php echo $p->quantidade; ?></td>
                         <td>
-                            <a href="/produtos/mostra" >Visualizar
+                            <a href="/produtos/mostra/<?= $p->id ?>" >Visualizar
                             </a>
                         </td>
                     </tr>
