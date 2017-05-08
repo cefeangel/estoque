@@ -12,7 +12,7 @@ class ProdutoController extends Controller
                     //query builder
         $produtos = DB::table('produtos')->get();
         
-        return view('listagem')->with('produtos', $produtos);
+        return view('produtos.listagem')->with('produtos', $produtos);
     }
     
     public function mostra(){
@@ -29,9 +29,14 @@ class ProdutoController extends Controller
         if(empty($produto[0])){
             return 'Esse produto não existe';
         }else{
-            return view('detalhe')->with('p', $produto[0]);
+            return view('produtos.detalhe')->with('p', $produto[0]);
         }
        
+    }
+    
+    public function novo(){
+        
+        return view('produtos.formulario');
     }
     
 }
